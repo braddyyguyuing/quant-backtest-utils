@@ -1,0 +1,12 @@
+{
+  "name": "quant-backtest-utils",
+  "version": "1.0.0",
+  "description": "Professional quantitative trading backtest utilities - calculate Sharpe ratio, max drawdown, win rate for crypto strategies",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "keywords": ["quant", "backtest", "crypto", "trading", "sharpe", "drawdown", "binance", "ccxt"],
+  "author": "QuantDev",
+  "license": "MIT"
+}
